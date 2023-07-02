@@ -25,8 +25,8 @@
     modal.push({type: "onboarding", stage: "intro"})
   }
 
-  const pubkeyLogIn = () => {
-    modal.push({type: "login/pubkey"})
+  const nsecBunkerLogin = () => {
+    modal.push({type: "login/nsecbunker"})
   }
 
   if (user.getPubkey()) {
@@ -55,8 +55,8 @@
           <Anchor class="w-32 text-center" type="button-accent" on:click={autoLogIn}>Log In</Anchor>
           <Anchor class="w-32 text-center" type="button" on:click={signUp}>Sign Up</Anchor>
         </div>
-        <Anchor type="unstyled" on:click={pubkeyLogIn}>
-          <i class="fa fa-cogs" /> Advanced Login
+        <Anchor type="unstyled" on:click={nsecBunkerLogin}>
+          <i class="fa fa-cogs" /> nsecBunker Login
         </Anchor>
       </div>
     </div>

@@ -69,6 +69,12 @@
           >.
         </p>
       </div>
+      <div class="flex flex-col gap-1">
+        <strong>nsecBunker Pubkey</strong>
+        <Input bind:value={values.nip46pubkey}>
+          <i slot="before" class="fa-solid fa-server" />
+        </Input>
+      </div>
       {#if pool.forceUrls.length === 0}
         <div class="flex flex-col gap-1">
           <strong>Multiplextr URL</strong>

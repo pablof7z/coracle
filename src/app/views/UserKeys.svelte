@@ -86,6 +86,20 @@
               external>compatible browser extension</Anchor> to securely store your key.
           </p>
         </div>
+
+
+        <div class="flex flex-col gap-1">
+          <strong>nsecBunker pubkey</strong>
+          <Input disabled type="password" value={privkeyDisplay}>
+            <button
+              slot="after"
+              class="fa-solid fa-copy cursor-pointer"
+              on:click={() => copyKey("private", privkeyDisplay)} />
+          </Input>
+          <p class="text-sm text-gray-1">
+            You can use a remote key to sign events more securely
+          </p>
+        </div>
       {/if}
     </div>
   </Content>

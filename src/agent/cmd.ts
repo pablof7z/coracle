@@ -161,14 +161,18 @@ class PublishableEvent {
     }
   }
   async publish(relays, onProgress = null, verb = "EVENT") {
-    const event = await this.getSignedEvent()
-    // return console.log(event)
-    const promise = pool.publish({relays, event, onProgress, verb})
+    try {
+      const eventPromise = this.getSignedEvent()
+      const event = await eventPromise;
+      const promise = pool.publish({relays, event, onProgress, verb})
 
-    // Copy the event since loki mutates it to add metadata
-    sync.processEvents({...event, seen_on: []})
+      // Copy the event since loki mutates it to add metadata
+      sync.processEvents({...event})
 
-    return [event, promise]
+      return [event, promise]
+    } catch (e) {
+      console.error(e)
+    }
   }
 }
 

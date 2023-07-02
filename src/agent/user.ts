@@ -34,6 +34,7 @@ const profile = synced("agent/user/profile", {
     reportAnalytics: true,
     dufflepudUrl: import.meta.env.VITE_DUFFLEPUD_URL,
     multiplextrUrl: import.meta.env.VITE_MULTIPLEXTR_URL,
+    nip46pubkey: import.meta.env.VITE_NIP46_PUBKEY,
   },
   rooms_joined: [],
   last_checked: {},

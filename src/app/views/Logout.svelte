@@ -11,7 +11,9 @@
 
     await dropAll()
 
+    const nsecBunkerKey = localStorage.getItem("agent/keys/nsecbunkerprivkey");
     localStorage.clear()
+    if (nsecBunkerKey) localStorage.setItem("agent/keys/nsecbunkerprivkey", nsecBunkerKey);
 
     // do a hard refresh so everything gets totally cleared.
     // Give them a moment to see the state transition. Dexie
